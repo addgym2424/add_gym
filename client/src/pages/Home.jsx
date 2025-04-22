@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Menu, X, Instagram, Facebook, Twitter, Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-
+import logo from '../assets/add_gym.jpg'; // Import your logo image
 export default function AddGymLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState({
@@ -42,7 +42,7 @@ export default function AddGymLandingPage() {
             <div className="h-12 w-12 relative">
               {/* Replace with your imported logo image */}
               <img 
-                src="/src/assets/add_gym.jpg" 
+                src={logo}
                 alt="ADD GYM Logo" 
                 className="w-full h-full object-contain"
               />
@@ -99,7 +99,7 @@ export default function AddGymLandingPage() {
             <div className="w-64 h-64">
               {/* Replace with your imported logo image */}
               <img 
-                src="/src/assets/add_gym.jpg" 
+                src={logo}
                 alt="ADD GYM Logo" 
                 className="w-full h-full object-contain"
               />
@@ -203,7 +203,7 @@ export default function AddGymLandingPage() {
               <div className="w-64 h-64">
                 {/* Replace with your imported logo image */}
                 <img 
-                  src="/src/assets/add_gym.jpg" 
+                  src={logo}
                   alt="ADD GYM Logo" 
                   className="w-full h-full object-contain"
                 />
@@ -447,7 +447,7 @@ export default function AddGymLandingPage() {
                 <div className="h-10 w-10 relative mr-2">
                   {/* Replace with your imported logo image */}
                   <img 
-                    src="/src/assets/add_gym.jpg" 
+                    src={logo}
                     alt="ADD GYM Logo" 
                     className="w-full h-full object-contain"
                   />
