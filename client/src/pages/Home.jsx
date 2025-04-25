@@ -95,7 +95,7 @@ export default function AddGymLandingPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-6 font-medium">Transform Your Fitness Journey</div>
+              <div className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-6 font-medium">Transform Yourself</div>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">Fitness On <span className="text-black bg-black/10 px-2">Your</span> Terms</h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">Create your perfect gym space anywhere, anytime. One-time investment, lifetime of fitness results.</p>
               <div className="flex flex-wrap gap-4">
@@ -169,7 +169,7 @@ export default function AddGymLandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 - Modern Card */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
-              <div className="h-53 bg-gray-100 relative overflow-hidden">
+              <div className="h-42 bg-gray-100 relative overflow-hidden">
                 <img src={homegym} alt="Home Gym Setup" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <ChevronRight size={40} className="text-white" />
@@ -207,8 +207,8 @@ export default function AddGymLandingPage() {
                 </div>
               </div>
               <div className="p-6 flex-grow">
-                <h3 className="text-xl font-bold mb-3">Residential Gym Training</h3>
-                <p className="text-gray-600 mb-4">Expert training in your residential gym facility with personalized guidance on your schedule.</p>
+                <h3 className="text-xl font-bold mb-3">Personal Training + Gym setup </h3>
+                <p className="text-gray-600 mb-4">Expert training  with personalized guidance on your schedule with setting up your own personal gym !.</p>
                 <ul className="text-gray-600 space-y-2 mb-6">
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
@@ -253,6 +253,10 @@ export default function AddGymLandingPage() {
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
                     <span>Rehabilitation programs</span>
                   </li>
+                  <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>Strength and Conditioning</span>
+                  </li>
                 </ul>
               </div>
               <div className="px-6 pb-6">
@@ -270,23 +274,16 @@ export default function AddGymLandingPage() {
             <div className="order-2 lg:order-1">
               <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">Our Story</span>
               <h2 className="text-4xl font-bold mb-6">About ADD GYM</h2>
-              <p className="text-gray-700 mb-6 text-lg">ADD GYM was founded with a simple yet powerful vision: to make fitness accessible to everyone, everywhere. We believe that a good fitness regimen shouldn't be limited by space, location, or budget constraints.</p>
+              <p className="text-gray-700 mb-6 text-lg">ADD GYM was founded with a simple yet powerful vision: to make fitness accessible to everyone, everywhere. We believe that a good fitness regimen shouldn't be limited by space or location .</p>
               
               <h3 className="text-xl font-bold mb-4">Our Mission</h3>
-              <p className="text-gray-700 mb-8">To empower individuals and communities to achieve their fitness goals through customized solutions that fit their unique circumstances, creating self-reliant gymnasiums accessible for generations.</p>
+              <p className="text-gray-700 mb-8">To empower individuals and communities to achieve their fitness goals through customized solutions that fit their unique circumstances, creating self-reliant gymnasiums accessible for decades.</p>
               
               <div className="space-y-4">
+                
                 <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
                   <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
                     <span className="font-bold">1</span>
-                  </div>
-                  <div>
-                    <p className="text-gray-700">To start a new chapter we all need to restart ourselves.</p>
-                  </div>
-                </div>
-                <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
-                  <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="font-bold">2</span>
                   </div>
                   <div>
                     <p className="text-gray-700">Our concept optimizes fitness and wellness at its best potential.</p>
@@ -294,7 +291,7 @@ export default function AddGymLandingPage() {
                 </div>
                 <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
                   <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="font-bold">3</span>
+                    <span className="font-bold">2</span>
                   </div>
                   <div>
                     <p className="text-gray-700"><span className="font-bold">USP:</span> One-time investment for a self-reliant gymnasium accessible for generations.</p>
@@ -310,10 +307,7 @@ export default function AddGymLandingPage() {
                 <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gray-200 rounded-2xl overflow-hidden shadow-xl border-8 border-white">
                   <img src={home} holdalt="Home gym setup" className="w-full h-full object-cover" />
                 </div>
-                <div className="absolute top-1/2 right-1/4 transform -translate-y-1/2 bg-black text-white p-4 rounded-xl shadow-lg">
-                  <p className="text-sm font-bold">Experience</p>
-                  <p className="text-2xl font-bold">10+ Years</p>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -557,7 +551,7 @@ export default function AddGymLandingPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">Start Your Fitness Journey Today</h2>
-            <p className="text-xl mb-8 opacity-90">One-time investment. Lifetime of fitness. Don't wait for tomorrow - your transformation begins now.</p>
+            <p className="text-xl mb-8 opacity-90"> Don't wait for tomorrow - your transformation begins now.</p>
             <div className="inline-flex items-center bg-white text-black font-medium py-4 px-8 rounded-full hover:bg-gray-100 transition shadow-lg">
               <a href="#contact" className="flex items-center">
                 Get Started Now <ArrowRight size={20} className="ml-2" />
