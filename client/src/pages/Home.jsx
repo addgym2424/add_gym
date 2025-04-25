@@ -515,7 +515,7 @@ export default function AddGymLandingPage() {
                     >
                       <option value="">Select a service</option>
                       <option value="Home Gym Setup">Home Gym Setup</option>
-                      <option value="Residential Gym Training">Residential Gym Training</option>
+                      <option value="Residential Gym Training">Personal Training + Gym setup </option>
                       <option value="Personal Training at Home">Personal Training at Home</option>
                       <option value="Other">Other</option>
                     </select>
