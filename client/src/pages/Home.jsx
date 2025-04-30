@@ -23,9 +23,9 @@ export default function AddGymLandingPage() {
     setFormStatus({ submitting: true, submitted: false, error: null });
 
     // Replace with your EmailJS service ID, template ID, and Public Key
-    const serviceId = 'service_lrm20ey';
-    const templateId = 'template_1loh8va';
-    const publicKey = '1ggY8LRSu4amFw6vN';
+    const serviceId = 'service_6w0c15t';
+    const templateId = 'template_5g9fnaw';
+    const publicKey = 'Tc5VqkpmO0T8uVQbn';
 
     emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       .then((result) => {
@@ -97,7 +97,7 @@ export default function AddGymLandingPage() {
             <div>
               <div className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-6 font-medium">Transform Yourself</div>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">Fitness On <span className="text-black bg-black/10 px-2">Your</span> Terms</h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">Create your perfect gym space anywhere, anytime. One-time investment, lifetime of fitness results.</p>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">Create your perfect gym space anywhere, anytime. single-time investment, lifetime of fitness results.</p>
               <div className="flex flex-wrap gap-4">
                 <a href="#services" className="bg-black text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-gray-800 transition flex items-center justify-center">
                   Explore Services <ArrowRight size={18} className="ml-2" />
@@ -191,6 +191,10 @@ export default function AddGymLandingPage() {
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
                     <span>Budget-friendly options</span>
                   </li>
+                  <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>Convenient for special population individual as well</span>
+                  </li>
                 </ul>
               </div>
               <div className="px-6 pb-6">
@@ -200,8 +204,8 @@ export default function AddGymLandingPage() {
             
             {/* Service 2 */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
-              <div className="h-55 bg-gray-100 relative overflow-hidden">
-                <img src={resigym} alt="Residential Gym Training" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <div className="h-65 bg-gray-100 relative overflow-hidden">
+                <img src={resigym} alt="Personal Training + Gym setup" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <ChevronRight size={40} className="text-white" />
                 </div>
@@ -221,6 +225,10 @@ export default function AddGymLandingPage() {
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
                     <span>Progress tracking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>Mobility drills for senior individuals</span>
                   </li>
                 </ul>
               </div>
@@ -274,10 +282,10 @@ export default function AddGymLandingPage() {
             <div className="order-2 lg:order-1">
               <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">Our Story</span>
               <h2 className="text-4xl font-bold mb-6">About ADD GYM</h2>
-              <p className="text-gray-700 mb-6 text-lg">ADD GYM was founded with a simple yet powerful vision: to make fitness accessible to everyone, everywhere. We believe that a good fitness regimen shouldn't be limited by space or location .</p>
+              <p className="text-gray-700 mb-6 text-lg">ADD GYM was founded with a simple yet powerful vision: to preach fitness , accessible to everyone, anywhere . We believe that a proper fitness setup shouldn't be limited by space , location or distance  .</p>
               
               <h3 className="text-xl font-bold mb-4">Our Mission</h3>
-              <p className="text-gray-700 mb-8">To empower individuals and communities to achieve their fitness goals through customized solutions that fit their unique circumstances, creating self-reliant gymnasiums accessible for decades.</p>
+              <p className="text-gray-700 mb-8">To empower individuals and communities to achieve their fitness goals through customized solutions that fit their unique circumstances, creating fitness a way of life through science and wellness !.</p>
               
               <div className="space-y-4">
                 
@@ -286,7 +294,7 @@ export default function AddGymLandingPage() {
                     <span className="font-bold">1</span>
                   </div>
                   <div>
-                    <p className="text-gray-700">Our concept optimizes fitness and wellness at its best potential.</p>
+                    <p className="text-gray-700">Our concept optimizes fitness and wellness at its optimum potential.</p>
                   </div>
                 </div>
                 <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
@@ -294,7 +302,15 @@ export default function AddGymLandingPage() {
                     <span className="font-bold">2</span>
                   </div>
                   <div>
-                    <p className="text-gray-700"><span className="font-bold">USP:</span> One-time investment for a self-reliant gymnasium accessible for generations.</p>
+                    <p className="text-gray-700"><span className="font-bold"></span> single-time investment for a reliable gymnasium accessible for generations.</p>
+                  </div>
+                </div>
+                <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                  <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                    <span className="font-bold">3</span>
+                  </div>
+                  <div>
+                    <p className="text-gray-700"><span className="font-bold">USP:</span> Conveneint setup for special population cases , covering all aerobics and corrective posture movements </p>
                   </div>
                 </div>
               </div>
@@ -385,7 +401,7 @@ export default function AddGymLandingPage() {
                 </div>
                 <div>
                   <h4 className="font-bold">Amit Singh</h4>
-                  <p className="text-gray-600 text-sm">Residential Gym Training</p>
+                  <p className="text-gray-600 text-sm">Personal Training + Gym setup</p>
                 </div>
               </div>
             </div>
@@ -515,7 +531,7 @@ export default function AddGymLandingPage() {
                     >
                       <option value="">Select a service</option>
                       <option value="Home Gym Setup">Home Gym Setup</option>
-                      <option value="Residential Gym Training">Personal Training + Gym setup </option>
+                      <option value="Personal Training + Gym setup">Personal Training + Gym setup </option>
                       <option value="Personal Training at Home">Personal Training at Home</option>
                       <option value="Other">Other</option>
                     </select>
@@ -593,7 +609,7 @@ export default function AddGymLandingPage() {
               <h4 className="font-bold mb-6">Services</h4>
               <ul className="space-y-3">
                 <li><a href="#services" className="text-gray-600 hover:text-black transition">Home Gym Setup</a></li>
-                <li><a href="#services" className="text-gray-600 hover:text-black transition">Residential Training</a></li>
+                <li><a href="#services" className="text-gray-600 hover:text-black transition">Gym setup + Personal Training</a></li>
                 <li><a href="#services" className="text-gray-600 hover:text-black transition">Personal Training</a></li>
                 <li><a href="#services" className="text-gray-600 hover:text-black transition">Fitness Consultation</a></li>
               </ul>
