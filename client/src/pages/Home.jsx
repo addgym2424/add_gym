@@ -8,6 +8,7 @@ import perso from '../assets/personal.jpg';
 import home from  '../assets/home.jpg';
 import sesh from  '../assets/training_sesh.jpg';
 import pic from '../assets/pic.png';
+import aglogo from '../assets/logo_ag.jpg'; // Replace with your logo image
 export default function AddGymLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState({
@@ -41,12 +42,17 @@ export default function AddGymLandingPage() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Modern Header with Floating Nav */}
-      <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold bg-black text-white px-3 py-1 rounded">ADD</span>
-            <span className="text-2xl font-bold ml-1">GYM</span>
+     
+        <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+          <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div className="flex items-center">
+          <div className="w-20 h-20 mr-3 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+            {/* Replace this placeholder with your logo image */}
+              <img src={aglogo} alt="" className="w-full h-full object-contain" />
+              {/* Fallback text when no image */}
+              <span className="text-xs text-gray-500 font-medium"></span>
+            </div>
+            
           </div>
           
           {/* Desktop Navigation */}
