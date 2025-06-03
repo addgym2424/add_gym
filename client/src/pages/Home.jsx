@@ -97,7 +97,7 @@ export default function AddGymLandingPage() {
             <div>
               <div className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-6 font-medium">Transform Yourself</div>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">Fitness On <span className="text-black bg-black/10 px-2">Your</span> Terms</h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">Create your perfect gym space anywhere, anytime. single-time investment, lifetime of fitness results.</p>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">Create your perfect gym space anywhere, anytime , single-time investment, lifetime of fitness .</p>
               <div className="flex flex-wrap gap-4">
                 <a href="#services" className="bg-black text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-gray-800 transition flex items-center justify-center">
                   Explore Services <ArrowRight size={18} className="ml-2" />
@@ -112,8 +112,8 @@ export default function AddGymLandingPage() {
                 {/* We'll use a placeholder instead of repeatedly using the logo */}
                 <img src={heroimage} alt="Fitness training" className="w-full h-full object-cover" />
                 <div className="absolute -bottom-6 -left-6 bg-black text-white p-4 rounded-xl shadow-lg">
-                  <p className="text-sm font-bold mb-1">One-Time Investment</p>
-                  <p className="text-sm">Lifetime of fitness</p>
+                  <p className="text-sm font-bold mb-1">Life time of fitness</p>
+                  
                 </div>
               </div>
             </div>
@@ -294,7 +294,7 @@ export default function AddGymLandingPage() {
                     <span className="font-bold">1</span>
                   </div>
                   <div>
-                    <p className="text-gray-700">Our concept optimizes fitness and wellness at its optimum potential.</p>
+                    <p className="text-gray-700">Our concept optimizes fitness and wellness at its optimum potential , along with conveneint setup for special population people  , covering all aerobics and corrective posture movements</p>
                   </div>
                 </div>
                 <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
@@ -305,14 +305,7 @@ export default function AddGymLandingPage() {
                     <p className="text-gray-700"><span className="font-bold"></span> single-time investment for a reliable gymnasium accessible for generations.</p>
                   </div>
                 </div>
-                <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
-                  <div className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="font-bold">3</span>
-                  </div>
-                  <div>
-                    <p className="text-gray-700"><span className="font-bold">USP:</span> Conveneint setup for special population cases , covering all aerobics and corrective posture movements </p>
-                  </div>
-                </div>
+                
               </div>
             </div>
             <div className="order-1 lg:order-2 relative">
@@ -450,9 +443,9 @@ export default function AddGymLandingPage() {
                 <h4 className="font-bold text-lg mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   <a href="https://www.instagram.com/_addgym/" className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition">
-                    <Instagram size={20} />
+                    <Instagram size={20} /> @addgym
                   </a>
-                  
+                 
                 </div>
               </div>
             </div>
@@ -611,7 +604,7 @@ export default function AddGymLandingPage() {
                 <li><a href="#services" className="text-gray-600 hover:text-black transition">Home Gym Setup</a></li>
                 <li><a href="#services" className="text-gray-600 hover:text-black transition">Gym setup + Personal Training</a></li>
                 <li><a href="#services" className="text-gray-600 hover:text-black transition">Personal Training</a></li>
-                <li><a href="#services" className="text-gray-600 hover:text-black transition">Fitness Consultation</a></li>
+                <li><a href="#services" className="text-gray-600 hover:text-black transition">Virtual Fitness Session</a></li>
               </ul>
             </div>
           </div>
