@@ -585,8 +585,8 @@ export default function AddGymLandingPage() {
                 <span className="text-xl font-bold bg-black text-white px-2 py-1 rounded mr-1">ADD</span>
                 <span className="text-xl font-bold">GYM</span>
               </div>
-              <p className="text-gray-600 mb-6 pr-12">Creating self-reliant gymnasiums accessible for each individual, society, and community. One-time investment, lifetime of fitness.</p>
-              <div className="flex space-x-4">
+              <p className="text-gray-600 mb-6 pr-12">Movements over Medicine is what Mr. Aion Wasim believed in while turning a vision in actuality.</p>
+   <div className="flex space-x-4">
                 <a href="#" className="text-gray-600 hover:text-black transition">
                   <Instagram size={20} />
                 </a>
