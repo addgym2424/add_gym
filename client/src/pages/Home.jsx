@@ -1,5 +1,6 @@
+
 import { useState, useRef } from 'react';
-import { Menu, X, Instagram, Facebook, Twitter, Mail, Phone, MapPin, ChevronRight, ArrowRight } from 'lucide-react';
+import { Menu, X, Instagram, Facebook, Twitter, Mail, Phone, MapPin, ChevronRight, ArrowRight, Plus, Minus } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import heroimage from '../assets/gym_hero.jpg'; 
 import homegym from '../assets/home_gym.jpg';
@@ -8,7 +9,8 @@ import perso from '../assets/personal.jpg';
 import home from  '../assets/home.jpg';
 import sesh from  '../assets/training_sesh.jpg';
 import pic from '../assets/pic.png';
-import aglogo from '../assets/logo_ag.jpg'; // Replace with your logo image
+import aglogo from '../assets/logo_ag.jpg';
+
 export default function AddGymLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState({
@@ -16,6 +18,7 @@ export default function AddGymLandingPage() {
     submitted: false,
     error: null
   });
+  const [openFaq, setOpenFaq] = useState(null);
   const formRef = useRef();
 
   // Function to handle form submission with EmailJS
@@ -39,6 +42,37 @@ export default function AddGymLandingPage() {
         setFormStatus({ submitting: false, submitted: false, error: error.text });
       });
   };
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqData = [
+    {
+      question: "what if anything gets damaged?",
+      answer: "We provide 6 months of warranty on any products."
+    },
+    {
+      question: "What's included in the home gym setup service?",
+      answer: "Our home gym setup includes space assessment, equipment recommendation based on your goals and budget, installation assistance, and a comprehensive orientation on how to use all equipment safely and effectively."
+    },
+    {
+      question: "Do you provide equipment or do I need to purchase it separately?",
+      answer: "We provide equipments separately on demand and we also offer package deals that include both setup and equipment to ensure you get the best value for your investment."
+    },
+    {
+      question: "Can you accommodate special population individuals (seniors, people with disabilities)?",
+      answer: "Absolutely! We specialize in creating accessible fitness solutions for seniors, individuals with mobility challenges, and those recovering from injuries. Our setups include specialized equipment and safety features tailored to specific needs."
+    },
+    {
+      question: "What's the difference between in-person and virtual personal training?",
+      answer: "In-person training provides hands-on guidance, immediate form correction, and equipment assistance. Virtual training offers flexibility and convenience while still providing personalized workout plans, real-time coaching, and progress tracking through video sessions."
+    },
+    {
+      question: "are spare parts covered under warranty ?",
+      answer: "yes all our products via installation or separately bought is under 6 months of warrnty ."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -163,7 +197,7 @@ export default function AddGymLandingPage() {
         </div>
       </section>
 
-      {/* Services Section - Card Based */}
+      {/* Services Section - Updated with 4 Cards */}
       <section id="services" className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -172,18 +206,18 @@ export default function AddGymLandingPage() {
             <p className="text-xl text-gray-600">Customized fitness solutions that adapt to your space, budget, and personal goals.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Service 1 - Modern Card */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Service 1 - Home Gym Setup */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
-              <div className="h-42 bg-gray-100 relative overflow-hidden">
+              <div className="h-48 bg-gray-100 relative overflow-hidden">
                 <img src={homegym} alt="Home Gym Setup" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <ChevronRight size={40} className="text-white" />
                 </div>
               </div>
-              <div className="p-6 flex-grow">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold mb-3">Home Gym Setup</h3>
-                <p className="text-gray-600 mb-4">Transform your space into a fully functional gym that meets your specific fitness goals and spatial requirements.</p>
+                <p className="text-gray-600 mb-4 flex-grow">Transform your space into a fully functional gym that meets your specific fitness goals and spatial requirements.</p>
                 <ul className="text-gray-600 space-y-2 mb-6">
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
@@ -197,28 +231,22 @@ export default function AddGymLandingPage() {
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
                     <span>Budget-friendly options</span>
                   </li>
-                  <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>Convenient for special population individual as well</span>
-                  </li>
                 </ul>
-              </div>
-              <div className="px-6 pb-6">
-                <a href="#contact" className="inline-block font-medium text-black hover:underline">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
+                <a href="#contact" className="inline-block font-medium text-black hover:underline mt-auto">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
               </div>
             </div>
             
-            {/* Service 2 */}
+            {/* Service 2 - Personal Training + Gym Setup */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
-              <div className="h-65 bg-gray-100 relative overflow-hidden">
+              <div className="h-48 bg-gray-100 relative overflow-hidden">
                 <img src={resigym} alt="Personal Training + Gym setup" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <ChevronRight size={40} className="text-white" />
                 </div>
               </div>
-              <div className="p-6 flex-grow">
-                <h3 className="text-xl font-bold mb-3">Personal Training + Gym setup </h3>
-                <p className="text-gray-600 mb-4">Expert training  with personalized guidance on your schedule with setting up your own personal gym !.</p>
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-xl font-bold mb-3">Personal Training + Gym Setup</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Expert training with personalized guidance on your schedule with setting up your own personal gym!</p>
                 <ul className="text-gray-600 space-y-2 mb-6">
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
@@ -232,28 +260,22 @@ export default function AddGymLandingPage() {
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
                     <span>Progress tracking</span>
                   </li>
-                  <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>Mobility drills for senior individuals</span>
-                  </li>
                 </ul>
-              </div>
-              <div className="px-6 pb-6">
-                <a href="#contact" className="inline-block font-medium text-black hover:underline">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
+                <a href="#contact" className="inline-block font-medium text-black hover:underline mt-auto">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
               </div>
             </div>
             
-            {/* Service 3 */}
+            {/* Service 3 - Personal Training at Home */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
-              <div className="h-54 bg-gray-100 relative overflow-hidden">
+              <div className="h-48 bg-gray-100 relative overflow-hidden">
                 <img src={perso} alt="Personal Training at Home" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <ChevronRight size={40} className="text-white" />
                 </div>
               </div>
-              <div className="p-6 flex-grow">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold mb-3">Personal Training at Home</h3>
-                <p className="text-gray-600 mb-4">Expert training in the comfort of your home with specialized workouts tailored to your needs.</p>
+                <p className="text-gray-600 mb-4 flex-grow">Expert training in the comfort of your home with specialized workouts tailored to your needs.</p>
                 <ul className="text-gray-600 space-y-2 mb-6">
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
@@ -267,14 +289,58 @@ export default function AddGymLandingPage() {
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
                     <span>Rehabilitation programs</span>
                   </li>
+                   <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>15 classes (Rs 10000)  - 1 month validity                       
+                    </span>
+                  </li>
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>Strength and Conditioning</span>
+                    <span>50 classes (Rs 30000)  - 3 month validity                       
+                    </span>
                   </li>
                 </ul>
+                <a href="#contact" className="inline-block font-medium text-black hover:underline mt-auto">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
               </div>
-              <div className="px-6 pb-6">
-                <a href="#contact" className="inline-block font-medium text-black hover:underline">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
+            </div>
+
+            {/* Service 4 - Virtual Training */}
+            <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
+              <div className="h-48 bg-gray-100 relative overflow-hidden">
+                <img src={sesh} alt="Virtual Personal Training" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                  <ChevronRight size={40} className="text-white" />
+                </div>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-xl font-bold mb-3">Virtual Personal Training</h3>
+                <p className="text-gray-600 mb-4 flex-grow">Get professional training from anywhere with our virtual sessions, perfect for busy schedules.</p>
+                <ul className="text-gray-600 space-y-2 mb-6">
+                  <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>Online live sessions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>Flexible timing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>Personalized programs</span>
+                  </li>
+                   <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>15 classes (Rs 5000)                         
+                    </span>
+                  </li>
+                     <li className="flex items-start">
+                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
+                    <span>30 classes (Rs 10000)                         
+                    </span>
+                  </li>
+                  
+                </ul>
+                <a href="#contact" className="inline-block font-medium text-black hover:underline mt-auto">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
               </div>
             </div>
           </div>
@@ -320,7 +386,7 @@ export default function AddGymLandingPage() {
                   <img src={sesh} alt="Training session" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gray-200 rounded-2xl overflow-hidden shadow-xl border-8 border-white">
-                  <img src={home} holdalt="Home gym setup" className="w-full h-full object-cover" />
+                  <img src={home} alt="Home gym setup" className="w-full h-full object-cover" />
                 </div>
               
               </div>
@@ -329,8 +395,61 @@ export default function AddGymLandingPage() {
         </div>
       </section>
 
-      {/* Testimonials - Modern Carousel Style */}
+      {/* FAQ Section */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">FAQ</span>
+            <h2 className="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600">Get answers to common questions about our services and approach.</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4">
+              {faqData.map((faq, index) => (
+                <div key={index} className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100">
+                  <button
+                    className="w-full text-left p-6 focus:outline-none focus:ring-2 focus:ring-black focus:ring-inset"
+                    onClick={() => toggleFaq(index)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className="flex-shrink-0">
+                        {openFaq === index ? (
+                          <Minus size={20} className="text-black" />
+                        ) : (
+                          <Plus size={20} className="text-black" />
+                        )}
+                      </div>
+                    </div>
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-6 pb-6">
+                      <div className="border-t border-gray-200 pt-4">
+                        <p className="text-gray-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">Still have questions? We're here to help!</p>
+              <a href="#contact" className="bg-black text-white font-medium py-3 px-8 rounded-full hover:bg-gray-800 transition flex items-center justify-center mx-auto max-w-fit">
+                Contact Us <ArrowRight size={18} className="ml-2" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Modern Carousel Style */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">Testimonials</span>
