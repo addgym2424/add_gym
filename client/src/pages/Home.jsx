@@ -21,6 +21,11 @@ export default function AddGymLandingPage() {
   const [openFaq, setOpenFaq] = useState(null);
   const formRef = useRef();
 
+  const [selectedService, setSelectedService] = useState('');
+
+const handleServiceChange = (e) => {
+  setSelectedService(e.target.value);
+};
   // Function to handle form submission with EmailJS
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -642,18 +647,47 @@ export default function AddGymLandingPage() {
                   <div>
                     <label htmlFor="service" className="block mb-2 font-medium text-gray-700">Service Interested In</label>
                     <select 
-                      id="service" 
-                      name="service"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
-                      required
-                    >
-                      <option value="">Select a service</option>
-                      <option value="Home Gym Setup">Home Gym Setup</option>
-                      <option value="Personal Training + Gym setup">Personal Training + Gym setup </option>
-                      <option value="Personal Training at Home">Personal Training at Home</option>
-                      <option value="Other">Other</option>
-                    </select>
+  id="service" 
+  name="service"
+  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+  required
+  onChange={handleServiceChange}
+>
+  <option value="">Select a service</option>
+  <option value="Home Gym Setup">Home Gym Setup</option>
+  <option value="Personal Training + Gym setup">Personal Training + Gym setup</option>
+  <option value="Personal Training at Home">Personal Training at Home</option>
+  <option value="Virtual Training">Virtual Training</option>
+  <option value="Other">Other</option>
+</select>
                   </div>
+                  {(selectedService === 'Personal Training at Home' || selectedService === 'Virtual Training') && (
+  <div>
+    <label htmlFor="pricing" className="block mb-2 font-medium text-gray-700">
+      {selectedService === 'Personal Training at Home' ? 'Personal Training Package' : 'Virtual Training Package'}
+    </label>
+    <select 
+      id="pricing" 
+      name="pricing"
+      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+      required
+    >
+      <option value="">Select a package</option>
+      {selectedService === 'Personal Training at Home' && (
+        <>
+          <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 10,000 (1 month validity)</option>
+          <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 30,000 (3 month validity)</option>
+        </>
+      )}
+      {selectedService === 'Virtual Training' && (
+        <>
+          <option value="15 classes - Rs 5,000">15 classes - Rs 5,000</option>
+          <option value="30 classes - Rs 10,000">30 classes - Rs 10,000</option>
+        </>
+      )}
+    </select>
+  </div>
+)}
                   <div>
                     <label htmlFor="message" className="block mb-2 font-medium text-gray-700">Your Message</label>
                     <textarea 
