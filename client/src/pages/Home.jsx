@@ -7,6 +7,7 @@ import homegym from '../assets/home_gym.jpg';
 import resigym from '../assets/resi_gym.jpg';
 import perso from '../assets/personal.jpg';
 import home from  '../assets/home.jpg';
+import vir from  '../assets/vir.jpg';
 import sesh from  '../assets/training_sesh.jpg';
 import pic from '../assets/pic.png';
 import aglogo from '../assets/logo_ag.jpg';
@@ -18,6 +19,52 @@ export default function AddGymLandingPage() {
     submitted: false,
     error: null
   });
+
+  const [selectedaService, setSelectedaService] = useState('');
+  const [showAccessoryPopup, setShowAccessoryPopup] = useState(false);
+  const [selectedAccessory, setSelectedAccessory] = useState('');
+  const [accessoryFormStatus, setAccessoryFormStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: null
+  });
+  const accessoryFormRef = useRef();
+const handleaServiceChange = (e) => {
+  setSelectedService(e.target.value);
+};
+// Accessory categories and their subcategories
+const accessoryOptions = {
+  'Bar': ['EZ Bar', 'Olympic Bar', 'Standard Bar', 'Curl Bar', 'Trap Bar'],
+  'Dumbles': ['Adjustable Dumbbells', 'Fixed Weight Dumbbells', 'Rubber Dumbbells', 'Chrome Dumbbells'],
+  'Mats': ['Yoga Mats', 'Exercise Mats', 'Puzzle Mats', 'Gym Floor Mats'],
+  'Lifting Accessories': ['Weight Lifting Belt', 'Wrist Straps', 'Knee Sleeves', 'Lifting Gloves', 'Chalk'],
+  'Balls': ['Medicine Ball', 'Stability Ball', 'Slam Ball', 'Wall Ball'],
+  'Bands': ['Resistance Bands', 'Loop Bands', 'Tube Bands', 'Pull Up Bands'],
+  'Ropes': ['Battle Ropes', 'Jump Ropes', 'Climbing Ropes'],
+  'Stepups': ['Aerobic Step', 'Plyometric Box', 'Adjustable Step'],
+  'Weight Plates': ['Olympic Plates', 'Standard Plates', 'Bumper Plates', 'Rubber Plates'],
+  'Kettlebells': ['Cast Iron Kettlebells', 'Competition Kettlebells', 'Adjustable Kettlebells', 'Vinyl Kettlebells']
+};
+const handleAccessorySubmit = (e) => {
+  e.preventDefault();
+  setAccessoryFormStatus({ submitting: true, submitted: false, error: null });
+  // Use the same EmailJS service but different template for accessories
+  const serviceId = 'service_6w0c15t';
+  const templateId = 'template_2hhz6u9'; // You'll need to create this template
+  const publicKey = 'Tc5VqkpmO0T8uVQbn';
+  emailjs.sendForm(serviceId, templateId, accessoryFormRef.current, publicKey)
+    .then((result) => {
+      console.log('Accessory inquiry sent successfully:', result.text);
+      setAccessoryFormStatus({ submitting: false, submitted: true, error: null });
+      accessoryFormRef.current.reset();
+      setSelectedAccessory('');
+    })
+    .catch((error) => {
+      console.error('Accessory inquiry failed:', error.text);
+      setAccessoryFormStatus({ submitting: false, submitted: false, error: error.text });
+    });
+};
+
   const [openFaq, setOpenFaq] = useState(null);
   const formRef = useRef();
 
@@ -55,15 +102,15 @@ const handleServiceChange = (e) => {
   const faqData = [
     {
       question: "what if anything gets damaged?",
-      answer: "We provide 6 months of warranty on any products."
+      answer: "We provide 180 days of warranty on any products."
     },
     {
       question: "What's included in the home gym setup service?",
       answer: "Our home gym setup includes space assessment, equipment recommendation based on your goals and budget, installation assistance, and a comprehensive orientation on how to use all equipment safely and effectively."
     },
     {
-      question: "Do you provide equipment or do I need to purchase it separately?",
-      answer: "We provide equipments separately on demand and we also offer package deals that include both setup and equipment to ensure you get the best value for your investment."
+      question: "Do you provide equipments or do I need to purchase it separately?",
+      answer: "We provide accesories separately on demand and we also offer package deals that include both setup and equipment to ensure you get the best value for your investment."
     },
     {
       question: "Can you accommodate special population individuals (seniors, people with disabilities)?",
@@ -75,8 +122,16 @@ const handleServiceChange = (e) => {
     },
     {
       question: "are spare parts covered under warranty ?",
-      answer: "yes all our products via installation or separately bought is under 6 months of warrnty ."
-    }
+      answer: "yes all our products via installation or separately bought is under 180 days of warranty ."
+    },
+    {
+      question: "Are there only male trainers  ?",
+      answer: " No we provide both male and female trainers."
+    },
+    {
+      question: "Are the trainers properly equipped   ?",
+      answer: "Yes all our trainers are properlly equipped with oxymeter , glucometer etc. for all your needs "
+    },
   ];
 
   return (
@@ -296,12 +351,12 @@ const handleServiceChange = (e) => {
                   </li>
                    <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>15 classes (Rs 10000)  - 1 month validity                       
+                    <span>15 classes - 1 month validity                       
                     </span>
                   </li>
                   <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>50 classes (Rs 30000)  - 3 month validity                       
+                    <span>50 classes - 3 month validity                       
                     </span>
                   </li>
                 </ul>
@@ -312,7 +367,7 @@ const handleServiceChange = (e) => {
             {/* Service 4 - Virtual Training */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
               <div className="h-48 bg-gray-100 relative overflow-hidden">
-                <img src={sesh} alt="Virtual Personal Training" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src={vir} alt="Virtual Personal Training" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <ChevronRight size={40} className="text-white" />
                 </div>
@@ -335,12 +390,12 @@ const handleServiceChange = (e) => {
                   </li>
                    <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>15 classes (Rs 5000)                         
+                    <span>15 classes (unlimited validity )                       
                     </span>
                   </li>
                      <li className="flex items-start">
                     <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>30 classes (Rs 10000)                         
+                    <span>30 classes (unlimited validity )                       
                     </span>
                   </li>
                   
@@ -399,6 +454,20 @@ const handleServiceChange = (e) => {
           </div>
         </div>
       </section>
+{/*pop-up*/}
+        {/* Accessories Section */}
+<div className="mt-16 text-center">
+  <div className="bg-gradient-to-r from-black to-gray-800 text-white p-8 rounded-2xl">
+    <h3 className="text-2xl font-bold mb-4">Need Gym Equipment & Accessories?</h3>
+    <p className="text-lg mb-6 opacity-90">Browse our complete range of fitness equipment and accessories</p>
+    <button
+      onClick={() => setShowAccessoryPopup(true)}
+      className="bg-white text-black font-medium py-3 px-8 rounded-full hover:bg-gray-100 transition flex items-center justify-center mx-auto"
+    >
+      Browse Equipment <ArrowRight size={18} className="ml-2" />
+    </button>
+  </div>
+</div>
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
@@ -610,6 +679,19 @@ const handleServiceChange = (e) => {
                 ) : null}
                 
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label className="block mb-2 font-medium text-gray-700">Client Type</label>
+                    <select 
+                      name="clientType"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                      required
+                    >
+                      <option value="">Select client type</option>
+                      <option value="Individual">Individual</option>
+                      <option value="Business">Business</option>
+                    </select>
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block mb-2 font-medium text-gray-700">Full Name</label>
@@ -634,60 +716,75 @@ const handleServiceChange = (e) => {
                       />
                     </div>
                   </div>
-                  <div>
-                    <label htmlFor="phone" className="block mb-2 font-medium text-gray-700">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      name="phone"
-                      id="phone" 
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition" 
-                      placeholder="+91 98XXX XXXXX"
-                    />
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="phone" className="block mb-2 font-medium text-gray-700">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        id="phone" 
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition" 
+                        placeholder="+91 98XXX XXXXX"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="location" className="block mb-2 font-medium text-gray-700">Location</label>
+                      <input 
+                        type="text" 
+                        name="location"
+                        id="location" 
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition" 
+                        placeholder="City, State"
+                        required
+                      />
+                    </div>
                   </div>
+
                   <div>
                     <label htmlFor="service" className="block mb-2 font-medium text-gray-700">Service Interested In</label>
                     <select 
-  id="service" 
-  name="service"
-  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
-  required
-  onChange={handleServiceChange}
->
-  <option value="">Select a service</option>
-  <option value="Home Gym Setup">Home Gym Setup</option>
-  <option value="Personal Training + Gym setup">Personal Training + Gym setup</option>
-  <option value="Personal Training at Home">Personal Training at Home</option>
-  <option value="Virtual Training">Virtual Training</option>
-  <option value="Other">Other</option>
-</select>
+                      id="service" 
+                      name="service"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                      required
+                      onChange={handleServiceChange}
+                    >
+                      <option value="">Select a service</option>
+                      <option value="Home Gym Setup">Home Gym Setup</option>
+                      <option value="Personal Training + Gym setup">Personal Training + Gym setup</option>
+                      <option value="Personal Training at Home">Personal Training at Home</option>
+                      <option value="Virtual Training">Virtual Training</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
                   {(selectedService === 'Personal Training at Home' || selectedService === 'Virtual Training') && (
-  <div>
-    <label htmlFor="pricing" className="block mb-2 font-medium text-gray-700">
-      {selectedService === 'Personal Training at Home' ? 'Personal Training Package' : 'Virtual Training Package'}
-    </label>
-    <select 
-      id="pricing" 
-      name="pricing"
-      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
-      required
-    >
-      <option value="">Select a package</option>
-      {selectedService === 'Personal Training at Home' && (
-        <>
-          <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 10,000 (1 month validity)</option>
-          <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 30,000 (3 month validity)</option>
-        </>
-      )}
-      {selectedService === 'Virtual Training' && (
-        <>
-          <option value="15 classes - Rs 5,000">15 classes - Rs 5,000</option>
-          <option value="30 classes - Rs 10,000">30 classes - Rs 10,000</option>
-        </>
-      )}
-    </select>
-  </div>
-)}
+                    <div>
+                      <label htmlFor="pricing" className="block mb-2 font-medium text-gray-700">
+                        {selectedService === 'Personal Training at Home' ? 'Personal Training Package' : 'Virtual Training Package'}
+                      </label>
+                      <select 
+                        id="pricing" 
+                        name="pricing"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                        required
+                      >
+                        <option value="">Select a package</option>
+                        {selectedService === 'Personal Training at Home' && (
+                          <>
+                            <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 10,000 (1 month validity)</option>
+                            <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 30,000 (3 month validity)</option>
+                          </>
+                        )}
+                        {selectedService === 'Virtual Training' && (
+                          <>
+                            <option value="15 classes - Rs 5,000">15 classes - Rs 5,000</option>
+                            <option value="30 classes - Rs 10,000">30 classes - Rs 10,000</option>
+                          </>
+                        )}
+                      </select>
+                    </div>
+                  )}
                   <div>
                     <label htmlFor="message" className="block mb-2 font-medium text-gray-700">Your Message</label>
                     <textarea 
@@ -776,6 +873,185 @@ const handleServiceChange = (e) => {
           </div>
         </div>
       </footer>
+
+{/* Accessory Popup Modal */}
+{showAccessoryPopup && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+    <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+        <h3 className="text-2xl font-bold">Gym Equipment & Accessories</h3>
+        <button
+          onClick={() => {
+            setShowAccessoryPopup(false);
+            setAccessoryFormStatus({ submitting: false, submitted: false, error: null });
+          }}
+          className="text-gray-500 hover:text-gray-700 transition"
+        >
+          <X size={24} />
+        </button>
+      </div>
+      
+      <div className="p-6">
+        {accessoryFormStatus.submitted ? (
+          <div className="text-center py-8">
+            <div className="bg-green-100 border border-green-200 text-green-700 px-6 py-4 rounded-xl mb-6">
+              <div className="flex items-center justify-center">
+                <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <strong className="font-bold block">Thank you!</strong>
+                  <span>Your equipment inquiry has been sent. We'll contact you with pricing and availability.</span>
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={() => {
+                setShowAccessoryPopup(false);
+                setAccessoryFormStatus({ submitting: false, submitted: false, error: null });
+              }}
+              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition"
+            >
+              Close
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="mb-6">
+              <p className="text-gray-600 mb-4">Select the equipment category you're interested in:</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {Object.keys(accessoryOptions).map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedAccessory(category)}
+                    className={`p-3 rounded-lg border-2 transition text-left ${
+                      selectedAccessory === category
+                        ? 'border-black bg-black text-white'
+                        : 'border-gray-200 hover:border-gray-300'
+                    }`}
+                  >
+                    <span className="font-medium">{category}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {selectedAccessory && (
+              <div className="mb-6 p-4 bg-gray-50 rounded-xl">
+                <h4 className="font-bold mb-3">{selectedAccessory} Options:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {accessoryOptions[selectedAccessory].map((item, index) => (
+                    <div key={index} className="flex items-center text-gray-700">
+                      <ChevronRight size={16} className="text-black mr-2 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {accessoryFormStatus.error && (
+              <div className="bg-red-100 border border-red-200 text-red-700 px-6 py-4 rounded-xl mb-6">
+                <div className="flex items-center">
+                  <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <div>
+                    <strong className="font-bold block">Error!</strong>
+                    <span>Something went wrong. Please try again later.</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <form ref={accessoryFormRef} onSubmit={handleAccessorySubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="accessory_name" className="block mb-2 font-medium text-gray-700">Full Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="accessory_name"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="accessory_email" className="block mb-2 font-medium text-gray-700">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="accessory_email"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="accessory_phone" className="block mb-2 font-medium text-gray-700">Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="accessory_phone"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                  placeholder="+91 98XXX XXXXX"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="accessory_category" className="block mb-2 font-medium text-gray-700">Equipment Category</label>
+                <input
+                  type="text"
+                  name="category"
+                  id="accessory_category"
+                  value={selectedAccessory}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50"
+                  placeholder="Please select a category above"
+                  readOnly
+                />
+              </div>
+
+              <div>
+                <label htmlFor="accessory_message" className="block mb-2 font-medium text-gray-700">Specific Requirements</label>
+                <textarea
+                  id="accessory_message"
+                  name="message"
+                  rows="3"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
+                  placeholder="Please specify which items you're interested in, quantity needed, budget range, etc."
+                  required
+                ></textarea>
+              </div>
+
+              <div className="flex gap-4">
+                <button
+                  type="button"
+                  onClick={() => setShowAccessoryPopup(false)}
+                  className="flex-1 bg-gray-200 text-gray-800 font-medium py-3 px-6 rounded-xl hover:bg-gray-300 transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 bg-black text-white font-medium py-3 px-6 rounded-xl hover:bg-gray-800 transition disabled:opacity-70 flex items-center justify-center"
+                  disabled={accessoryFormStatus.submitting || !selectedAccessory}
+                >
+                  {accessoryFormStatus.submitting ? 'Sending...' : 'Get Quote'}
+                  <ArrowRight size={18} className="ml-2" />
+                </button>
+              </div>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
