@@ -38,12 +38,16 @@ const accessoryOptions = {
   'Dumbles': ['Adjustable Dumbbells', 'Fixed Weight Dumbbells', 'Rubber Dumbbells', 'Chrome Dumbbells'],
   'Mats': ['Yoga Mats', 'Exercise Mats', 'Puzzle Mats', 'Gym Floor Mats'],
   'Lifting Accessories': ['Weight Lifting Belt', 'Wrist Straps', 'Knee Sleeves', 'Lifting Gloves', 'Chalk'],
-  'Balls': ['Medicine Ball', 'Stability Ball', 'Slam Ball', 'Wall Ball'],
+  'Medicinal Balls': ['Medicine Ball', 'Stability Ball', 'Slam Ball', 'Wall Ball'],
   'Bands': ['Resistance Bands', 'Loop Bands', 'Tube Bands', 'Pull Up Bands'],
   'Ropes': ['Battle Ropes', 'Jump Ropes', 'Climbing Ropes'],
   'Stepups': ['Aerobic Step', 'Plyometric Box', 'Adjustable Step'],
   'Weight Plates': ['Olympic Plates', 'Standard Plates', 'Bumper Plates', 'Rubber Plates'],
-  'Kettlebells': ['Cast Iron Kettlebells', 'Competition Kettlebells', 'Adjustable Kettlebells', 'Vinyl Kettlebells']
+  'Kettlebells': ['Cast Iron Kettlebells', 'Competition Kettlebells', 'Adjustable Kettlebells', 'Vinyl Kettlebells'],
+  'Bench set': ['Flat Bench', 'Adjustable Bench', 'Incline Bench', 'Decline Bench'],
+  'Foam rollers': ['High Density Foam Roller', 'Grid Foam Roller', 'Peanut Foam Roller', 'Trigger Point Foam Roller'],
+  'Ab rollers': ['Standard Ab Roller', 'Dual Wheel Ab Roller', 'Knee Pad Ab Roller'],
+
 };
 const handleAccessorySubmit = (e) => {
   e.preventDefault();
@@ -130,7 +134,7 @@ const handleServiceChange = (e) => {
     },
     {
       question: "Are the trainers properly equipped   ?",
-      answer: "Yes all our trainers are properlly equipped with oxymeter , glucometer etc. for all your needs "
+      answer: "We have certified health coaches/instructors. Using glucometer and pulse oximeter in each session is our professionalism. "
     },
   ];
 
@@ -600,8 +604,7 @@ const handleServiceChange = (e) => {
           </div>
         </div>
       </section>
-
-      {/* Contact Section - Modern Split */}
+{/* Contact Section - Modern Split */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
@@ -688,7 +691,7 @@ const handleServiceChange = (e) => {
                     >
                       <option value="">Select client type</option>
                       <option value="Individual">Individual</option>
-                      <option value="Business">Business</option>
+                      <option value="Business">community</option>
                     </select>
                   </div>
 
@@ -796,6 +799,24 @@ const handleServiceChange = (e) => {
                       required
                     ></textarea>
                   </div>
+                  
+                  {/* Terms and Conditions Agreement Checkbox */}
+                  <div className="flex items-start space-x-3">
+                    <input 
+                      type="checkbox" 
+                      id="terms"
+                      name="terms"
+                      className="mt-1 w-4 h-4 text-black bg-gray-100 border-gray-300 rounded focus:ring-black focus:ring-2"
+                      required
+                    />
+                    <label htmlFor="terms" className="text-sm text-gray-700">
+                      I have read and agree to the{' '}
+                      <a href="#terms-conditions" className="text-black font-medium hover:underline">
+                        Terms and Conditions
+                      </a>
+                    </label>
+                  </div>
+
                   <button 
                     type="submit" 
                     className="w-full bg-black text-white font-medium py-3 px-8 rounded-xl hover:bg-gray-800 transition disabled:opacity-70 flex items-center justify-center"
@@ -805,6 +826,84 @@ const handleServiceChange = (e) => {
                     <ArrowRight size={20} className="ml-2" />
                   </button>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Terms and Conditions Section */}
+      <section id="terms-conditions" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">Legal</span>
+              <h2 className="text-4xl font-bold mb-6">Terms and Conditions</h2>
+              <p className="text-xl text-gray-600">Please read our terms carefully before booking any services</p>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl p-8 space-y-8">
+              {/* Payment Terms */}
+              <div className="border-l-4 border-black pl-6">
+                <h3 className="text-2xl font-bold mb-4 flex items-center">
+                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                  </svg>
+                  Payment Terms
+                </h3>
+                <div className="space-y-3 text-gray-700">
+                  <p><strong>Personal Training Services:</strong> A minimum of 50% payment is required upfront, with the remaining balance due within 2 weeks of service commencement.</p>
+                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation, or an early payment discount may be available upon request.</p>
+                </div>
+              </div>
+
+              {/* Trainer Assignment */}
+              <div className="border-l-4 border-black pl-6">
+                <h3 className="text-2xl font-bold mb-4 flex items-center">
+                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                  Trainer Assignment
+                </h3>
+                <p className="text-gray-700">To ensure client comfort and maintain professional standards, we assign trainers and coaches of the same gender as our clients for all personal training sessions.</p>
+              </div>
+
+              {/* Cancellation Policy */}
+              <div className="border-l-4 border-black pl-6">
+                <h3 className="text-2xl font-bold mb-4 flex items-center">
+                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Cancellation Policy
+                </h3>
+                <p className="text-gray-700">All training sessions must be cancelled at least 24 hours in advance. Cancellations made with less than 24 hours notice will result in the session being counted as completed.</p>
+              </div>
+
+              {/* Extensions and Special Circumstances */}
+              <div className="border-l-4 border-black pl-6">
+                <h3 className="text-2xl font-bold mb-4 flex items-center">
+                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Package Extensions
+                </h3>
+                <p className="text-gray-700">Package validity extensions will only be considered under exceptional circumstances, including but not limited to: examination periods, family bereavement, serious illness, or other unforeseen unfortunate events. All extension requests must be submitted with appropriate documentation.</p>
+              </div>
+
+              {/* Contact for Queries */}
+              <div className="bg-black text-white p-6 rounded-xl">
+                <h4 className="font-bold text-lg mb-2">Questions about our Terms?</h4>
+                <p className="opacity-90 mb-4">If you have any questions or need clarification about our terms and conditions, please don't hesitate to contact us.</p>
+                <div className="flex items-center space-x-4">
+                  <a href="tel:+917602930279" className="flex items-center text-white hover:text-gray-200 transition">
+                    <Phone size={16} className="mr-2" />
+                    +91 7602930279
+                  </a>
+                  <a href="mailto:addgym2424@gmail.com" className="flex items-center text-white hover:text-gray-200 transition">
+                    <Mail size={16} className="mr-2" />
+                    addgym2424@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -938,7 +1037,7 @@ const handleServiceChange = (e) => {
 
             {selectedAccessory && (
               <div className="mb-6 p-4 bg-gray-50 rounded-xl">
-                <h4 className="font-bold mb-3">{selectedAccessory} Options:</h4>
+                <h4 className="font-bold mb-3">{selectedAccessory} Suggestions:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {accessoryOptions[selectedAccessory].map((item, index) => (
                     <div key={index} className="flex items-center text-gray-700">
