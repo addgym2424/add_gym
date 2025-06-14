@@ -833,77 +833,77 @@ const handleServiceChange = (e) => {
       </section>
 
       {/* Terms and Conditions Section */}
-      <section id="terms-conditions" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
+      <section id="terms-conditions" className="py-12 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">Legal</span>
-              <h2 className="text-4xl font-bold mb-6">Terms and Conditions</h2>
-              <p className="text-xl text-gray-600">Please read our terms carefully before booking any services</p>
+            <div className="text-center mb-8 md:mb-12">
+              <span className="inline-block bg-black/10 text-black px-3 py-1 md:px-4 md:py-1 rounded-full mb-3 md:mb-4 text-sm md:text-base font-medium">Legal</span>
+              <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">Terms and Conditions</h2>
+              <p className="text-base md:text-xl text-gray-600 px-4">Please read our terms carefully before booking any services</p>
             </div>
 
-            <div className="bg-gray-50 rounded-2xl p-8 space-y-8">
+            <div className="bg-gray-50 rounded-xl md:rounded-2xl p-4 md:p-8 space-y-6 md:space-y-8">
               {/* Payment Terms */}
-              <div className="border-l-4 border-black pl-6">
-                <h3 className="text-2xl font-bold mb-4 flex items-center">
-                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="border-l-4 border-black pl-4 md:pl-6">
+                <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 flex items-start md:items-center">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 mt-0.5 md:mt-0 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                   </svg>
-                  Payment Terms
+                  <span className="leading-tight">Payment Terms</span>
                 </h3>
-                <div className="space-y-3 text-gray-700">
+                <div className="space-y-2 md:space-y-3 text-sm md:text-base text-gray-700">
                   <p><strong>Personal Training Services:</strong> A minimum of 50% payment is required upfront, with the remaining balance due within 2 weeks of service commencement.</p>
-                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation.</p>
+                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation, or an early payment discount may be available upon request.</p>
                 </div>
               </div>
 
               {/* Trainer Assignment */}
-              <div className="border-l-4 border-black pl-6">
-                <h3 className="text-2xl font-bold mb-4 flex items-center">
-                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="border-l-4 border-black pl-4 md:pl-6">
+                <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 flex items-start md:items-center">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 mt-0.5 md:mt-0 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                   </svg>
-                  Trainer Assignment
+                  <span className="leading-tight">Trainer Assignment</span>
                 </h3>
-                <p className="text-gray-700">To ensure client comfort and maintain professional standards, we assign trainers and coaches of the same gender as our clients for all personal training sessions.</p>
+                <p className="text-sm md:text-base text-gray-700">To ensure client comfort and maintain professional standards, we assign trainers and coaches of the same gender as our clients for all personal training sessions.</p>
               </div>
 
               {/* Cancellation Policy */}
-              <div className="border-l-4 border-black pl-6">
-                <h3 className="text-2xl font-bold mb-4 flex items-center">
-                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="border-l-4 border-black pl-4 md:pl-6">
+                <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 flex items-start md:items-center">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 mt-0.5 md:mt-0 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                  Cancellation Policy
+                  <span className="leading-tight">Cancellation Policy</span>
                 </h3>
-                <div className="space-y-3 text-gray-700">
+                <div className="space-y-2 md:space-y-3 text-sm md:text-base text-gray-700">
                   <p><strong>Training Sessions:</strong> All training sessions must be cancelled at least 24 hours in advance. Cancellations made with less than 24 hours notice will result in the session being counted as completed.</p>
                   <p><strong>Service Cancellations:</strong> For cancellations made after 24 hours of booking confirmation, only 50% of the total payment will be refunded due to shipping charges and purchase order processing costs already incurred.</p>
                 </div>
               </div>
 
               {/* Extensions and Special Circumstances */}
-              <div className="border-l-4 border-black pl-6">
-                <h3 className="text-2xl font-bold mb-4 flex items-center">
-                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="border-l-4 border-black pl-4 md:pl-6">
+                <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 flex items-start md:items-center">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 mt-0.5 md:mt-0 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                  Package Extensions
+                  <span className="leading-tight">Package Extensions</span>
                 </h3>
-                <p className="text-gray-700">Package validity extensions will only be considered under exceptional circumstances, including but not limited to: examination periods, family bereavement, serious illness, or other unforeseen unfortunate events. All extension requests must be submitted with appropriate documentation.</p>
+                <p className="text-sm md:text-base text-gray-700">Package validity extensions will only be considered under exceptional circumstances, including but not limited to: examination periods, family bereavement, serious illness, or other unforeseen unfortunate events. All extension requests must be submitted with appropriate documentation.</p>
               </div>
 
               {/* Contact for Queries */}
-              <div className="bg-black text-white p-6 rounded-xl">
-                <h4 className="font-bold text-lg mb-2">Questions about our Terms?</h4>
-                <p className="opacity-90 mb-4">If you have any questions or need clarification about our terms and conditions, please don't hesitate to contact us.</p>
-                <div className="flex items-center space-x-4">
-                  <a href="tel:+917602930279" className="flex items-center text-white hover:text-gray-200 transition">
-                    <Phone size={16} className="mr-2" />
+              <div className="bg-black text-white p-4 md:p-6 rounded-xl">
+                <h4 className="font-bold text-base md:text-lg mb-2">Questions about our Terms?</h4>
+                <p className="opacity-90 mb-3 md:mb-4 text-sm md:text-base">If you have any questions or need clarification about our terms and conditions, please don't hesitate to contact us.</p>
+                <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                  <a href="tel:+917602930279" className="flex items-center text-white hover:text-gray-200 transition text-sm md:text-base">
+                    <Phone size={14} className="mr-2 flex-shrink-0" />
                     +91 7602930279
                   </a>
-                  <a href="mailto:addgym2424@gmail.com" className="flex items-center text-white hover:text-gray-200 transition">
-                    <Mail size={16} className="mr-2" />
+                  <a href="mailto:addgym2424@gmail.com" className="flex items-center text-white hover:text-gray-200 transition text-sm md:text-base break-all">
+                    <Mail size={14} className="mr-2 flex-shrink-0" />
                     addgym2424@gmail.com
                   </a>
                 </div>
