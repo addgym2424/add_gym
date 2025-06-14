@@ -35,7 +35,7 @@ const handleaServiceChange = (e) => {
 // Accessory categories and their subcategories
 const accessoryOptions = {
   'Bar': ['EZ Bar', 'Olympic Bar', 'Standard Bar', 'Curl Bar', 'Trap Bar'],
-  'Dumbles': ['Adjustable Dumbbells', 'Fixed Weight Dumbbells', 'Rubber Dumbbells', 'Chrome Dumbbells'],
+  'Dumbbles': ['Adjustable Dumbbells', 'Fixed Weight Dumbbells', 'Rubber Dumbbells', 'Chrome Dumbbells'],
   'Mats': ['Yoga Mats', 'Exercise Mats', 'Puzzle Mats', 'Gym Floor Mats'],
   'Lifting Accessories': ['Weight Lifting Belt', 'Wrist Straps', 'Knee Sleeves', 'Lifting Gloves', 'Chalk'],
   'Medicinal Balls': ['Medicine Ball', 'Stability Ball', 'Slam Ball', 'Wall Ball'],
@@ -47,7 +47,7 @@ const accessoryOptions = {
   'Bench set': ['Flat Bench', 'Adjustable Bench', 'Incline Bench', 'Decline Bench'],
   'Foam rollers': ['High Density Foam Roller', 'Grid Foam Roller', 'Peanut Foam Roller', 'Trigger Point Foam Roller'],
   'Ab rollers': ['Standard Ab Roller', 'Dual Wheel Ab Roller', 'Knee Pad Ab Roller'],
-
+  'Others':[] ,
 };
 const handleAccessorySubmit = (e) => {
   e.preventDefault();
@@ -853,7 +853,7 @@ const handleServiceChange = (e) => {
                 </h3>
                 <div className="space-y-3 text-gray-700">
                   <p><strong>Personal Training Services:</strong> A minimum of 50% payment is required upfront, with the remaining balance due within 2 weeks of service commencement.</p>
-                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation, or an early payment discount may be available upon request.</p>
+                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation.</p>
                 </div>
               </div>
 
