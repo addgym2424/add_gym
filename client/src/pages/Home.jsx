@@ -876,7 +876,10 @@ const handleServiceChange = (e) => {
                   </svg>
                   Cancellation Policy
                 </h3>
-                <p className="text-gray-700">All training sessions must be cancelled at least 24 hours in advance. Cancellations made with less than 24 hours notice will result in the session being counted as completed.</p>
+                <div className="space-y-3 text-gray-700">
+                  <p><strong>Training Sessions:</strong> All training sessions must be cancelled at least 24 hours in advance. Cancellations made with less than 24 hours notice will result in the session being counted as completed.</p>
+                  <p><strong>Service Cancellations:</strong> For cancellations made after 24 hours of booking confirmation, only 50% of the total payment will be refunded due to shipping charges and purchase order processing costs already incurred.</p>
+                </div>
               </div>
 
               {/* Extensions and Special Circumstances */}
