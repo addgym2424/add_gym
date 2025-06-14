@@ -853,7 +853,7 @@ const handleServiceChange = (e) => {
                 </h3>
                 <div className="space-y-2 md:space-y-3 text-sm md:text-base text-gray-700">
                   <p><strong>Personal Training Services:</strong> A minimum of 50% payment is required upfront, with the remaining balance due within 2 weeks of service commencement.</p>
-                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation, or an early payment discount may be available upon request.</p>
+                  <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation.</p>
                 </div>
               </div>
 
