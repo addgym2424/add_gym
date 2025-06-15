@@ -35,7 +35,7 @@ const handleaServiceChange = (e) => {
 // Accessory categories and their subcategories
 const accessoryOptions = {
   'Bar': ['EZ Bar', 'Olympic Bar', 'Standard Bar', 'Curl Bar', 'Trap Bar'],
-  'Dumbbles': ['Adjustable Dumbbells', 'Fixed Weight Dumbbells', 'Rubber Dumbbells', 'Chrome Dumbbells'],
+  'Dumbbells': ['Adjustable Dumbbells', 'Fixed Weight Dumbbells', 'Rubber Dumbbells', 'Chrome Dumbbells'],
   'Mats': ['Yoga Mats', 'Exercise Mats', 'Puzzle Mats', 'Gym Floor Mats'],
   'Lifting Accessories': ['Weight Lifting Belt', 'Wrist Straps', 'Knee Sleeves', 'Lifting Gloves', 'Chalk'],
   'Medicinal Balls': ['Medicine Ball', 'Stability Ball', 'Slam Ball', 'Wall Ball'],
@@ -689,7 +689,7 @@ const handleServiceChange = (e) => {
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
                       required
                     >
-                      <option value="">Select client type</option>
+                      <option value="">Select member type</option>
                       <option value="Individual">Individual</option>
                       <option value="Business">community</option>
                     </select>
