@@ -683,7 +683,7 @@ const handleServiceChange = (e) => {
                 
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block mb-2 font-medium text-gray-700">Client Type</label>
+                    <label className="block mb-2 font-medium text-gray-700">Member Type</label>
                     <select 
                       name="clientType"
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-black focus:ring-0 transition"
