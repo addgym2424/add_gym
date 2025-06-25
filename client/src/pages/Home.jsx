@@ -708,8 +708,8 @@ const handleServiceChange = (e) => {
                         )}
                         {selectedService === 'Virtual Training' && (
                           <>
-                            <option value="15 classes - Rs 5,000">15 classes - Rs 5,000</option>
-                            <option value="30 classes - Rs 10,000">30 classes - Rs 10,000</option>
+                            <option value="15 classes - Rs 5,000">15 classes - Rs 5,000 + 8% GST</option>
+                            <option value="30 classes - Rs 10,000">30 classes - Rs 10,000 + 8% GST</option>
                           </>
                         )}
                       </select>
