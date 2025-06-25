@@ -136,6 +136,10 @@ const handleServiceChange = (e) => {
       question: "Are the trainers properly equipped   ?",
       answer: "We have certified health coaches/instructors. Using glucometer and pulse oximeter in each session is our professionalism. "
     },
+    {
+      question: "What if I don't do the installation and only keep the personal training.",
+      answer: "Surely, but as the workouts will get advance and enhanced after progress.  So the basic equips are needed for the client and PT for the improvised workouts can be purchased from website as well. "
+    },
   ];
 
   return (
@@ -430,7 +434,7 @@ const handleServiceChange = (e) => {
                     <span className="font-bold">1</span>
                   </div>
                   <div>
-                    <p className="text-gray-700">Our concept optimizes fitness and wellness at its optimum potential , along with conveneint setup for special population people  , covering all aerobics and corrective posture movements</p>
+                    <p className="text-gray-700">Our concept optimizes fitness and wellness at its optimum potential , along with convenient setup for special population people  , covering all aerobics and corrective posture movements</p>
                   </div>
                 </div>
                 <div className="flex items-start bg-white p-4 rounded-xl shadow-sm">
@@ -526,84 +530,7 @@ const handleServiceChange = (e) => {
         </div>
       </section>
 
-      {/* Testimonials - Modern Carousel Style */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full mb-4 font-medium">Testimonials</span>
-            <h2 className="text-4xl font-bold mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600">Hear from those who have transformed their fitness journey with ADD GYM.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 - Modern Card */}
-            <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300 relative">
-              <div className="absolute -top-5 left-8">
-                <div className="inline-flex bg-black text-white p-2 rounded-full">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.75 9.75C9.75 8.09315 8.40685 6.75 6.75 6.75H4.5C3.25736 6.75 2.25 7.75736 2.25 9V10.5C2.25 11.7426 3.25736 12.75 4.5 12.75H6.75C7.99264 12.75 9 13.7574 9 15V16.5C9 17.7426 7.99264 18.75 6.75 18.75H4.5C3.25736 18.75 2.25 17.7426 2.25 16.5V15.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M21.75 9.75C21.75 8.09315 20.4069 6.75 18.75 6.75H16.5C15.2574 6.75 14.25 7.75736 14.25 9V10.5C14.25 11.7426 15.2574 12.75 16.5 12.75H18.75C19.9926 12.75 21 13.7574 21 15V16.5C21 17.7426 19.9926 18.75 18.75 18.75H16.5C15.2574 18.75 14.25 17.7426 14.25 16.5V15.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-8 pt-4">"ADD GYM transformed my unused garage into an amazing workout space that fits all my needs. The one-time investment has completely changed my fitness routine for the better."</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
-                  <img src={pic} alt="Rahul Sharma" className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Rahul Sharma</h4>
-                  <p className="text-gray-600 text-sm">Home Gym Setup</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300 relative">
-              <div className="absolute -top-5 left-8">
-                <div className="inline-flex bg-black text-white p-2 rounded-full">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.75 9.75C9.75 8.09315 8.40685 6.75 6.75 6.75H4.5C3.25736 6.75 2.25 7.75736 2.25 9V10.5C2.25 11.7426 3.25736 12.75 4.5 12.75H6.75C7.99264 12.75 9 13.7574 9 15V16.5C9 17.7426 7.99264 18.75 6.75 18.75H4.5C3.25736 18.75 2.25 17.7426 2.25 16.5V15.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M21.75 9.75C21.75 8.09315 20.4069 6.75 18.75 6.75H16.5C15.2574 6.75 14.25 7.75736 14.25 9V10.5C14.25 11.7426 15.2574 12.75 16.5 12.75H18.75C19.9926 12.75 21 13.7574 21 15V16.5C21 17.7426 19.9926 18.75 18.75 18.75H16.5C15.2574 18.75 14.25 17.7426 14.25 16.5V15.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-8 pt-4">"Having a personal trainer come to my home has been life-changing. The flexibility of scheduling and personalized attention to my posture issues has made all the difference."</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
-                  <img src={pic} alt="Priya Patel" className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Priya Patel</h4>
-                  <p className="text-gray-600 text-sm">Personal Training</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition duration-300 relative">
-              <div className="absolute -top-5 left-8">
-                <div className="inline-flex bg-black text-white p-2 rounded-full">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.75 9.75C9.75 8.09315 8.40685 6.75 6.75 6.75H4.5C3.25736 6.75 2.25 7.75736 2.25 9V10.5C2.25 11.7426 3.25736 12.75 4.5 12.75H6.75C7.99264 12.75 9 13.7574 9 15V16.5C9 17.7426 7.99264 18.75 6.75 18.75H4.5C3.25736 18.75 2.25 17.7426 2.25 16.5V15.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M21.75 9.75C21.75 8.09315 20.4069 6.75 18.75 6.75H16.5C15.2574 6.75 14.25 7.75736 14.25 9V10.5C14.25 11.7426 15.2574 12.75 16.5 12.75H18.75C19.9926 12.75 21 13.7574 21 15V16.5C21 17.7426 19.9926 18.75 18.75 18.75H16.5C15.2574 18.75 14.25 17.7426 14.25 16.5V15.75" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-              <p className="text-gray-700 italic mb-8 pt-4">"Our society gym was barely used until ADD GYM started offering training sessions. Now it's a vibrant community space that brings residents together."</p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
-                  <img src={pic} alt="Amit Singh" className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Amit Singh</h4>
-                  <p className="text-gray-600 text-sm">Personal Training + Gym setup</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 {/* Contact Section - Modern Split */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
@@ -775,8 +702,8 @@ const handleServiceChange = (e) => {
                         <option value="">Select a package</option>
                         {selectedService === 'Personal Training at Home' && (
                           <>
-                            <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 10,000 (1 month validity)</option>
-                            <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 30,000 (3 month validity)</option>
+                            <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 10,000 + 8% GST (1 month validity)</option>
+                            <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 30,000 + 8% GST (3 month validity)</option>
                           </>
                         )}
                         {selectedService === 'Virtual Training' && (
@@ -854,6 +781,7 @@ const handleServiceChange = (e) => {
                 <div className="space-y-2 md:space-y-3 text-sm md:text-base text-gray-700">
                   <p><strong>Personal Training Services:</strong> A minimum of 50% payment is required upfront, with the remaining balance due within 2 weeks of service commencement.</p>
                   <p><strong>Home Gym Setup:</strong> Full payment is required prior to installation.</p>
+                  <p><strong>Virtual Training:</strong>Virtual Class payments shall be done initially before the sessions get started.</p>
                 </div>
               </div>
 
