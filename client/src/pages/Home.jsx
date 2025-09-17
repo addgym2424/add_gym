@@ -702,14 +702,14 @@ const handleServiceChange = (e) => {
                         <option value="">Select a package</option>
                         {selectedService === 'Personal Training at Home' && (
                           <>
-                            <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 10,000 + 8% GST (1 month validity)</option>
-                            <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 30,000 + 8% GST (3 month validity)</option>
+                            <option value="15 classes - Rs 10,000 (1 month validity)">15 classes - Rs 12,000 + 5% GST (1 month validity)</option>
+                            <option value="50 classes - Rs 30,000 (3 month validity)">50 classes - Rs 36,000 + 5% GST (3 month validity)</option>
                           </>
                         )}
                         {selectedService === 'Virtual Training' && (
                           <>
-                            <option value="15 classes - Rs 5,000">15 classes - Rs 5,000 + 8% GST</option>
-                            <option value="30 classes - Rs 10,000">30 classes - Rs 10,000 + 8% GST</option>
+                            <option value="15 classes - Rs 5,000">15 classes - Rs 6,000 + 5% GST</option>
+                            <option value="30 classes - Rs 10,000">30 classes - Rs 12,000 + 5% GST</option>
                           </>
                         )}
                       </select>
