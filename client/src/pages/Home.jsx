@@ -1,5 +1,5 @@
 
-import { useState, useRef } from 'react';
+import { useState, useRef , useEffect } from 'react';
 import { Menu, X, Instagram, Facebook, Twitter, Mail, Phone, MapPin, ChevronRight, ArrowRight, Plus, Minus } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import heroimage from '../assets/gym_hero.jpg'; 
@@ -102,6 +102,27 @@ const handleServiceChange = (e) => {
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  useEffect(() => {
+  loadRazorpay();
+}, []);
+
+  const loadRazorpay = () => {
+  const container = document.getElementById("rzp-home-15");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  const script = document.createElement("script");
+  script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+  script.async = true;
+  script.setAttribute(
+    "data-payment_button_id",
+    "pl_S0ZqhZpPEGkgD6"
+  );
+
+  container.appendChild(script);
+};
 
   const faqData = [
     {
@@ -334,43 +355,65 @@ const handleServiceChange = (e) => {
             </div>
             
             {/* Service 3 - Personal Training at Home */}
-            <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
-              <div className="h-48 bg-gray-100 relative overflow-hidden">
-                <img src={perso} alt="Personal Training at Home" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                  <ChevronRight size={40} className="text-white" />
-                </div>
-              </div>
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold mb-3">Personal Training at Home</h3>
-                <p className="text-gray-600 mb-4 flex-grow">Expert training in the comfort of your home with specialized workouts tailored to your needs.</p>
-                <ul className="text-gray-600 space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>Corrective posture training</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>Mobility & flexibility focus</span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>Rehabilitation programs</span>
-                  </li>
-                   <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>15 classes - 1 month validity                       
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ChevronRight size={16} className="text-black mr-2 mt-1 flex-shrink-0" />
-                    <span>50 classes - 3 month validity                       
-                    </span>
-                  </li>
-                </ul>
-                <a href="#contact" className="inline-block font-medium text-black hover:underline mt-auto">Learn more <ArrowRight size={16} className="inline ml-1" /></a>
-              </div>
-            </div>
+<div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
+  <div className="h-48 bg-gray-100 relative overflow-hidden">
+    <img
+      src={perso}
+      alt="Personal Training at Home"
+      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+      <ChevronRight size={40} className="text-white" />
+    </div>
+  </div>
+
+  <div className="p-6 flex-grow flex flex-col">
+    <h3 className="text-xl font-bold mb-3">
+      Personal Training at Home
+    </h3>
+
+    <p className="text-gray-600 mb-4">
+      Expert training in the comfort of your home with specialized workouts tailored to your needs.
+    </p>
+
+    <ul className="text-gray-600 space-y-2 mb-4">
+      <li className="flex items-start">
+        <ChevronRight size={16} className="text-black mr-2 mt-1" />
+        Corrective posture training
+      </li>
+      <li className="flex items-start">
+        <ChevronRight size={16} className="text-black mr-2 mt-1" />
+        Mobility & flexibility focus
+      </li>
+      <li className="flex items-start">
+        <ChevronRight size={16} className="text-black mr-2 mt-1" />
+        Rehabilitation programs
+      </li>
+    </ul>
+
+    {/* PLAN + PRICE */}
+    <div className="border rounded-xl p-4 mt-auto">
+      <h4 className="font-semibold">Base Plan</h4>
+
+      <div className="text-sm text-gray-600 mt-2">
+        <p>15 Classes • 1 Month</p>
+        <p>Base Price: ₹13,500</p>
+        <p>GST (5%): ₹675</p>
+        <p className="font-medium text-black">
+          Total Payable: ₹14,175
+        </p>
+      </div>
+
+      {/* RAZORPAY BUTTON GOES HERE */}
+      <div id="rzp-home-15" className="mt-3"></div>
+
+      <p className="text-xs text-gray-500 mt-2">
+        GST included. Invoice will be provided after payment.
+      </p>
+    </div>
+  </div>
+</div>
+
 
             {/* Service 4 - Virtual Training */}
             <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100">
