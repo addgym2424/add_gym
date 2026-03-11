@@ -10,7 +10,7 @@ import home from  '../assets/home.jpg';
 import vir from  '../assets/vir.jpg';
 import sesh from  '../assets/training_sesh.jpg';
 import pic from '../assets/pic.png';
-import aglogo from '../assets/logo_ag.jpg';
+import aglogo from '../assets/addgymlogo.jpg';
 
 export default function AddGymLandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -908,7 +908,7 @@ const handleServiceChange = (e) => {
                 <span className="text-xl font-bold bg-black text-white px-2 py-1 rounded mr-1">ADD</span>
                 <span className="text-xl font-bold">GYM</span>
               </div>
-              <p className="text-gray-600 mb-6 pr-12">Movements over Medicine is what Mr. Aion Wasim believed in while turning a vision in actuality.</p>
+              <p className="text-gray-600 mb-6 pr-12">Movements over Medicine is what Addgym believes in while turning a vision in actuality.</p>
    <div className="flex space-x-4">
                 <a href="#" className="text-gray-600 hover:text-black transition">
                   <Instagram size={20} />
