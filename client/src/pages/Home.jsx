@@ -107,23 +107,22 @@ const handleServiceChange = (e) => {
   loadRazorpay();
 }, []);
 
-  const loadRazorpay = () => {
+const loadRazorpay = () => {
   const container = document.getElementById("rzp-home-15");
   if (!container) return;
 
   container.innerHTML = "";
 
+  const form = document.createElement("form");
+
   const script = document.createElement("script");
   script.src = "https://checkout.razorpay.com/v1/payment-button.js";
   script.async = true;
-  script.setAttribute(
-    "data-payment_button_id",
-    "pl_S0ZqhZpPEGkgD6"
-  );
+  script.setAttribute("data-payment_button_id", "pl_S0ZqhZpPEGkgD6");
 
-  container.appendChild(script);
+  form.appendChild(script);
+  container.appendChild(form);
 };
-
   const faqData = [
     {
       question: "what if anything gets damaged?",
