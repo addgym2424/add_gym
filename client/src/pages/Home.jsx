@@ -67,7 +67,7 @@ const handleAccessorySubmit = (e) => {
       console.error('Accessory inquiry failed:', error.text);
       setAccessoryFormStatus({ submitting: false, submitted: false, error: error.text });
     });
-};
+}  ;
 
   const [openFaq, setOpenFaq] = useState(null);
   const formRef = useRef();
