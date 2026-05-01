@@ -392,7 +392,7 @@ const loadRazorpay = () => {
 
     {/* PLAN + PRICE */}
     <div className="border rounded-xl p-4 mt-auto">
-      <h4 className="font-semibold">Base Plan</h4>
+    {/*  <h4 className="font-semibold">Base Plan</h4>
 
       <div className="text-sm text-gray-600 mt-2">
         <p>15 Classes • 1 Month</p>
@@ -403,12 +403,12 @@ const loadRazorpay = () => {
         </p>
       </div>
 
-      {/* RAZORPAY BUTTON GOES HERE */}
       <div id="rzp-home-15" className="mt-3"></div>
 
       <p className="text-xs text-gray-500 mt-2">
         GST included. Invoice will be provided after payment.
-      </p>
+
+      </p>*/}
     </div>
   </div>
 </div>
@@ -907,7 +907,7 @@ const loadRazorpay = () => {
                 <span className="text-xl font-bold bg-black text-white px-2 py-1 rounded mr-1">ADD</span>
                 <span className="text-xl font-bold">GYM</span>
               </div>
-              <p className="text-gray-600 mb-6 pr-12">Movements over Medicine is what Addgym believes in while turning a vision in actuality.</p>
+              <p className="text-gray-600 mb-6 pr-12">Movements over Machinery is what Addgym believes in while turning a vision in actuality.</p>
    <div className="flex space-x-4">
                 <a href="#" className="text-gray-600 hover:text-black transition">
                   <Instagram size={20} />
